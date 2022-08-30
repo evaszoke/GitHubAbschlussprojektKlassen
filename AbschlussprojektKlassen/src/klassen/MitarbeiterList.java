@@ -12,8 +12,11 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 public class MitarbeiterList {
+	
+	//Instanzvariable
 	private ArrayList<Mitarbeiter> mitarbeiterElemente;
 
+	//Konstruktor
 	public MitarbeiterList(ArrayList<Mitarbeiter> mitarbeiterElemente) {
 		super();
 		this.mitarbeiterElemente = mitarbeiterElemente;
@@ -21,7 +24,7 @@ public class MitarbeiterList {
 	
 	public MitarbeiterList() {}
 
-	//um den MitarbeiterList deserialisieren zu können
+	//Um die Mitarbeiterliste deserialisieren zu können
 	public MitarbeiterList(String xmlString) {
 		if(xmlString == null || xmlString.length() == 0) {
 			return;
@@ -38,7 +41,7 @@ public class MitarbeiterList {
 		}
 	}
 
-
+	//Getters und Setters
 	public ArrayList<Mitarbeiter> getMitarbeiterElemente() {
 		return mitarbeiterElemente;
 	}
@@ -47,6 +50,7 @@ public class MitarbeiterList {
 		this.mitarbeiterElemente = mitarbeiterElemente;
 	}
 
+	//Umwandeln auf XML-Darstellung
 	public String toXML() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("<mitarbeiterlist>");
@@ -55,7 +59,6 @@ public class MitarbeiterList {
 				sb.append(einMA.toXML());
 			}
 		}
-
 		sb.append("</mitarbeiterlist>");
 		return sb.toString();
 	}

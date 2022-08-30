@@ -12,6 +12,8 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 public class ArbeitszeitList {
+	
+	//Instanzvariablen
 	private ArrayList<Arbeitszeit> arbeitszeiten;
 
 	public ArbeitszeitList(ArrayList<Arbeitszeit> arbeitszeiten) {
@@ -19,8 +21,10 @@ public class ArbeitszeitList {
 		this.arbeitszeiten = arbeitszeiten;
 	}
 	
+	//Konstruktor
 	public ArbeitszeitList() {}
 	
+	//Um die Arbeitszeitliste deserialisieren zu können
 	public ArbeitszeitList(String xmlString) {
 		if(xmlString == null || xmlString.length() == 0) {
 			return;
@@ -37,6 +41,7 @@ public class ArbeitszeitList {
 		}
 	}
 
+	//Getters und Setters
 	public ArrayList<Arbeitszeit> getArbeitszeiten() {
 		return arbeitszeiten;
 	}
@@ -45,6 +50,7 @@ public class ArbeitszeitList {
 		this.arbeitszeiten = arbeitszeiten;
 	}
 	
+	//Umwandeln auf XML-Darstellung
 	public String toXML() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("<arbeitszeitlist>");

@@ -12,8 +12,11 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 public class ProjektList {
+	
+	//Instanzvariable
 	private ArrayList<Projekt> projekte;
 
+	//Konstruktor
 	public ProjektList(ArrayList<Projekt> projekte) {
 		super();
 		this.projekte = projekte;
@@ -21,7 +24,7 @@ public class ProjektList {
 
 	public ProjektList() {}
 
-	//um den ProjektList deserialisieren zu können
+	//Um die Projektliste deserialisieren zu können
 	public ProjektList(String xmlString) {
 		if(xmlString == null || xmlString.length() == 0) {
 			return;
@@ -38,6 +41,7 @@ public class ProjektList {
 		}
 	}
 
+	//Getters und Setters
 	public ArrayList<Projekt> getProjekte() {
 		return projekte;
 	}
@@ -45,7 +49,8 @@ public class ProjektList {
 	public void setProjekte(ArrayList<Projekt> projekte) {
 		this.projekte = projekte;
 	}
-
+	
+	//Umwandeln auf XML-Darstellung
 	public String toXML() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("<projektlist>");

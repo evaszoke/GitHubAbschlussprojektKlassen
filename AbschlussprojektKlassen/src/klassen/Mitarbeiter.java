@@ -12,6 +12,8 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 public class Mitarbeiter {
+	
+	//Instanzvariablen
 	private int id;
 	private String name;
 	private String adresse;
@@ -21,6 +23,8 @@ public class Mitarbeiter {
 	private String email;
 	private double wochenarbeitszeit;
 	private double stundensatz;
+	
+	//Konstruktor
 	public Mitarbeiter(int id, String name, String adresse, LocalDate geburtsdat, String svNummer, String telefon,
 			String email, double wochenarbeitszeit, double stundensatz) {
 		super();
@@ -38,7 +42,7 @@ public class Mitarbeiter {
 	public Mitarbeiter() {}
 	
 	
-	//um den Mitarbeiter deserialisieren zu können
+	//Um den Mitarbeiter deserialisieren zu können
 	public Mitarbeiter(String xmlString) {
 		if(xmlString == null || xmlString.length() == 0) {
 			return;
@@ -63,6 +67,7 @@ public class Mitarbeiter {
 		}
 	}
 
+	//Getters und Setters
 	public int getId() {
 		return id;
 	}
@@ -135,6 +140,7 @@ public class Mitarbeiter {
 		this.stundensatz = stundensatz;
 	}
 	
+	//Umwandeln auf XML-Darstellung
 	public String toXML() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("<mitarbeiter>");
@@ -152,6 +158,7 @@ public class Mitarbeiter {
 		
 	}
 
+	//toString Methode
 	@Override
 	public String toString() {
 		return name;

@@ -12,8 +12,11 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 public class AuftraggeberList {
+	
+	//Instanzvariable
 	private ArrayList<Auftraggeber> auftraggeberElemente;
 	
+	//Konstruktor
 	public AuftraggeberList(ArrayList<Auftraggeber> auftraggeberElemente) {
 		super();
 		this.auftraggeberElemente = auftraggeberElemente;
@@ -21,7 +24,7 @@ public class AuftraggeberList {
 
 	public AuftraggeberList() {}
 
-	//um den AuftraggeberList deserialisieren zu können
+	//Um die Auftraggeberliste deserialisieren zu können
 	public AuftraggeberList(String xmlString) {
 		if(xmlString == null || xmlString.length() == 0) {
 			return;
@@ -38,6 +41,7 @@ public class AuftraggeberList {
 		}
 	}
 
+	//Getters und Setters
 	public ArrayList<Auftraggeber> getAuftraggeberElemente() {
 		return auftraggeberElemente;
 	}
@@ -46,6 +50,7 @@ public class AuftraggeberList {
 		this.auftraggeberElemente = auftraggeberElemente;
 	}
 
+	//Umwandeln auf XML-Darstellung
 	public String toXML() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("<auftraggeberlist>");
@@ -54,10 +59,7 @@ public class AuftraggeberList {
 				sb.append(einAG.toXML());
 			}
 		}
-
 		sb.append("</auftraggeberlist>");
 		return sb.toString();
 	}
-
-
 }

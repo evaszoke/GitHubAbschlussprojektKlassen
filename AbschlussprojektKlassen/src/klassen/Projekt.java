@@ -12,6 +12,8 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 public class Projekt {
+	
+	//Instanzvariablen
 	private int id;
 	private String name;
 	private String adresse;
@@ -20,6 +22,7 @@ public class Projekt {
 	private Auftraggeber auftraggeber;
 	private boolean abgeschlossen;
 	
+	//Konstruktor
 	public Projekt(int id, Auftraggeber auftraggeber, String name, String adresse, String telefon, String kontaktperson,
 			boolean abgeschlossen) {
 		super();
@@ -34,7 +37,7 @@ public class Projekt {
 
 	public Projekt() {}
 	
-	//um den Projekt deserialisieren zu können
+	//Um den Projekt deserialisieren zu können
 	public Projekt(String xmlString) {
 		if(xmlString == null || xmlString.length() == 0) {
 			return;
@@ -57,6 +60,7 @@ public class Projekt {
 		}
 	}
 
+	//Getters und Setters
 	public int getId() {
 		return id;
 	}
@@ -113,6 +117,7 @@ public class Projekt {
 		this.abgeschlossen = abgeschlossen;
 	}
 
+	//Umwandeln auf XML-Darstellung
 	public String toXML() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("<projekt>");
@@ -128,6 +133,7 @@ public class Projekt {
 		
 	}
 
+	//toString Methode
 	@Override
 	public String toString() {
 		return name;

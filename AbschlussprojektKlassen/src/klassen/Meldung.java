@@ -11,8 +11,11 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 public class Meldung {
+	
+	//Instanzvariable
 	private String text;
 
+	//Konstruktor
 	public Meldung(String text) {
 		super();
 		if(text == null || text.length() == 0) {
@@ -36,6 +39,7 @@ public class Meldung {
 	
 	public Meldung() {}
 
+	//Getters und Setters
 	public String getText() {
 		return text;
 	}
@@ -44,11 +48,13 @@ public class Meldung {
 		this.text = text;
 	}
 
+	//toString Methode
 	@Override
 	public String toString() {
 		return text;
 	}
 	
+	//Umwandeln auf XML-Darstellung
 	public String toXML() {
 		return "<meldung><text>" + text + "</text></meldung>";
 	}

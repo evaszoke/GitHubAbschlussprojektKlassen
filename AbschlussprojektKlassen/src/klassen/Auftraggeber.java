@@ -12,12 +12,15 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 public class Auftraggeber {
+	
+	//Instanzvariablen
 	private int id;
 	private String name;
 	private String adresse;
 	private String telefon;
 	private String email;
 	
+	//Konstruktor
 	public Auftraggeber(int id, String name, String adresse, String telefon, String email) {
 		super();
 		this.id = id;
@@ -31,7 +34,7 @@ public class Auftraggeber {
 	public Auftraggeber() {}
 	
 	
-	//um den Auftraggeber deserialisieren zu können
+	//Um den Auftraggeber deserialisieren zu können
 	public Auftraggeber(String xmlString) {
 		if(xmlString == null || xmlString.length() == 0) {
 			return;
@@ -52,9 +55,7 @@ public class Auftraggeber {
 		}
 	}
 
-	
-	
-	
+	//Getters und Setters
 	public int getId() {
 		return id;
 	}
@@ -104,7 +105,7 @@ public class Auftraggeber {
 		this.email = email;
 	}
 
-
+	//Umwandeln auf XML-Darstellung
 	public String toXML() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("<auftraggeber>");
@@ -115,10 +116,9 @@ public class Auftraggeber {
 		sb.append("<auftraggeberemail>" + email + "</auftraggeberemail>");
 		sb.append("</auftraggeber>");
 		return sb.toString();
-		
 	}
 
-
+	//toString Methode
 	@Override
 	public String toString() {
 		return name;

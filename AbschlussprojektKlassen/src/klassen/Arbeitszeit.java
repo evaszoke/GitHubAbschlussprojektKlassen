@@ -13,6 +13,8 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 public class Arbeitszeit {
+	
+	//Instanzvariablen
 	private int zeilennummer;
 	private LocalDate datum;
 	private Mitarbeiter mitarbeiter;
@@ -23,6 +25,7 @@ public class Arbeitszeit {
 	private double stundensatz;
 	private boolean fakturiert;
 	
+	//Konstruktor
 	public Arbeitszeit(int zeilennummer, LocalDate datum, Mitarbeiter mitarbeiter, Projekt projekt, String von,
 			String bis, double stundengesamt, double stundensatz, boolean fakturiert) {
 		super();
@@ -39,6 +42,7 @@ public class Arbeitszeit {
 
 	public Arbeitszeit() {}
 	
+	//Um die Arbeitszeit deserialisieren zu können
 	public Arbeitszeit(String xmlString) {
 		if(xmlString == null || xmlString.length() == 0) {
 			return;
@@ -63,7 +67,8 @@ public class Arbeitszeit {
 			e.printStackTrace();
 		}
 	}
-
+	
+	//Getters und Setters
 	public int getZeilennummer() {
 		return zeilennummer;
 	}
@@ -136,6 +141,7 @@ public class Arbeitszeit {
 		this.fakturiert = fakturiert;
 	}
 	
+	//Umwandeln auf XML-Darstellung
 	public String toXML() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("<arbeitszeit>");
